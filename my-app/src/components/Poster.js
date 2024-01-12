@@ -4,10 +4,6 @@ import React from "react";
 
 export const Poster = (props) => {    
 
-  const handleClick = (movie) => {
-    console.log("Yes");
-    console.log(movie);
-  }
   
   return (
     <>
@@ -22,7 +18,7 @@ export const Poster = (props) => {
         return (
           <Link to={`/info/${movie.id}`} className="movie text-decoration-none text-reset" >
         
-          <div className="" key={index} onClick={() => handleClick(movie)}>
+          <div className="" key={index}>
 
             <img
               className="movie-image"
