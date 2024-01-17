@@ -45,7 +45,7 @@ export const API = () => {
 
 export const API_Movie = (id) =>{
   const [movie_id, setMovie_id] = useState();
-  let MOVIE_URL = `${URL}/movie/${id}?append_to_response=videos&${API_KEY}`;
+  let MOVIE_URL = `${URL}/movie/${id}?append_to_response=videos,credits&${API_KEY}`;
   
   
   const API_get = async() => {

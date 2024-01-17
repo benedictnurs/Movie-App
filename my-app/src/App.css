@@ -17,6 +17,10 @@ main{
   color: #E50914;
 }
 
+.movie-size{
+  width: 80%;
+}
+
 
 
 .movie{
@@ -50,5 +54,21 @@ main{
     transition:transform 0.3s ease-in;
     color: #F5F5F1;
 }
+.b{
+  border: solid;
+}
 
+.c{
+  height: -10px;
+  padding: 0;
+}
 
+.bold{
+  font-weight: bold;
+
+}
+
+iframe{
+  width: 80vw;
+  height: calc(80vw/1.77);
+ }
