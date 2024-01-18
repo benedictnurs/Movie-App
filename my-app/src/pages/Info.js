@@ -3,11 +3,11 @@ import { Link, useParams } from 'react-router-dom';
 import { Header } from '../components/Header.js';
 import { API_Movie } from '../components/Api.js';
 import { MapData } from '../components/MappedData.js';
+import { Rating } from '../components/Rating.js';
 
 export const Info = () => {
   const { id } = useParams();
-  const movie_details = API_Movie(id);
-  const movie = movie_details.movie_id;
+  const movie = API_Movie(id).movie_id;
   
 
 
@@ -20,7 +20,7 @@ export const Info = () => {
       </>
     );
   } else {
-  
+
     console.log(movie);
     return (
       <>
@@ -31,7 +31,7 @@ export const Info = () => {
 
 
           <div className="movie-size ">
-          <h1 className="py-3">{movie.original_title}</h1>
+          <h1 className="py-3">{movie.original_title} </h1>
 
           
           <iframe
@@ -49,7 +49,7 @@ export const Info = () => {
               <div className="col"><span className="bold">Duration: </span>{movie.runtime} min</div>
                   <div className="w-100"></div>
               <div className="col"><MapData data={movie.genres} name = "Genres"/></div>
-              <div className="col"><span className="bold">Revenue: </span>${movie.revenue.toLocaleString()}</div>
+              <div className="col"><span className="bold">Average Rating: </span> <Rating rating={movie.vote_average}/> </div>
                   <div className="w-100"></div>
               <div className="col"><MapData data={movie.production_companies} name = "Production Companies  "/></div>
               <div className="col pb-5"><MapData data={movie.credits.cast} name = "Actors"/></div>
